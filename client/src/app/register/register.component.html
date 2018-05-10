@@ -1,0 +1,40 @@
+
+  <mat-card class="main-form">
+    <mat-card-content >                           
+        <mat-tab-group color="primary" class="tt" dynamicHeight=true (selectedTabChange)="tabChange($event)">
+         <mat-tab label="Sign Up" >
+            <br>
+            <mat-form-field>
+              <input matInput [(ngModel)]='user.user_name' placeholder="Enter your name" class="ng-invalid">
+            </mat-form-field><br>
+            <mat-form-field>
+              <input matInput type='email' [(ngModel)]='user.email' placeholder="Enter your Email">
+            </mat-form-field><br>
+            <mat-form-field>
+              <input matInput type="password" [(ngModel)]='user.password' placeholder="Enter a password">
+            </mat-form-field><br>
+            <mat-form-field>
+              <input matInput type='password' [(ngModel)]="user.confirm_password" placeholder="Confirme password">
+            </mat-form-field><br>
+            <div class="btn-cont">
+                <button mat-raised-button  (click)="signUp()" class="submit-button" color="accent">Sign Up</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Sign In">
+            <br>
+            <mat-form-field>
+              <input matInput [(ngModel)]='user.user_name' placeholder="Enter your name">
+            </mat-form-field><br>
+            <mat-form-field>
+              <input matInput [(ngModel)]='user.email' placeholder="Enter your Email">
+            </mat-form-field><br>
+            <mat-form-field>
+              <input matInput type='password' [(ngModel)]='user.password' placeholder="Enter a password">
+            </mat-form-field><br>
+            <div class="btn-cont">
+                <button mat-raised-button (click)="signIn()" class="submit-button" color="accent">Sign In</button>
+            </div>
+        </mat-tab>
+      </mat-tab-group>  
+  </mat-card-content>
+  </mat-card>

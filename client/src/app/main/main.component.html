@@ -1,0 +1,78 @@
+<div *ngIf="loggedInUser" class="d">
+<mat-toolbar color="primary" class="pf">
+    <mat-toolbar-row class="container container-fluid">
+      <span>My Wallet</span>
+      <span class="example-spacer"></span>
+      <button class="sign" mat-button [matMenuTriggerFor]="menu">{{loggedInUser.user_name}}</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+<mat-card class="w-100">
+<mat-tab-group disableRipple=true (selectedTabChange)="tabChange($event)" dynamicHeight=true>
+    <mat-tab label="Bitcoin Mainnet" class="dg">
+        <br>
+        <div>
+          <mat-card class="w-50 cc">
+              <div id="qrcode1" class="w-25"></div>
+        <p class="cc tb candy-carousel" color="primary">Your Reciving Address: {{loggedInUser.mainBitcoinAddress}}</p>
+      <p *ngIf="balance" class="cc">Balance: {{balance.msg}} BTC</p>
+      <mat-form-field class="cc">
+       <label>To: </label> <input matInput [(ngModel)]="tx.to" color="primary" class="ds">
+      </mat-form-field><br>
+      <mat-form-field class="cc">
+       <label>Amount: </label> <input matInput [(ngModel)]="tx.amount" color="primary">
+      </mat-form-field>
+      <div class="cc">
+      <button mat-raised-button color="accent" (click)="sendTransaction()">Send</button>
+        </div>
+        <div>
+          <br>
+          <p class="cc">Transactions</p>
+        </div>
+      </mat-card>
+      </div>
+    </mat-tab>
+  <mat-tab label="Bitcoin Testnet">
+      <br>
+      <p class="cc tb candy-carousel" color="primary">Your Reciving Address: {{loggedInUser.testnetBitcoinAddress}}</p>
+    <p *ngIf="balance" class="cc">Balance: {{balance.msg}} BTC</p>
+    <mat-form-field class="cc">
+     <label>To: </label> <input matInput [(ngModel)]="tx.to" color="primary" class="ds">
+    </mat-form-field><br>
+    <mat-form-field class="cc">
+     <label>Amount: </label> <input matInput [(ngModel)]="tx.amount" color="primary">
+    </mat-form-field>
+    <div class="cc">
+    <button mat-raised-button color="accent" (click)="sendTransaction()">Send</button>
+      </div>
+      <div>
+        <br>
+        <p class="cc">Transactions</p>
+      </div>
+  </mat-tab>
+  <mat-tab label="Litecoin Testnet">
+    <br>
+    <p class="cc tb candy-carousel" color="primary">Your Reciving Address: {{loggedInUser.testnetBitcoinAddress}}</p>
+    <p *ngIf="balance" class="cc">Balance: {{balance.msg}} BTC</p>
+    <mat-form-field class="cc">
+     <label>To: </label> <input matInput [(ngModel)]="tx.to" color="primary">
+    </mat-form-field><br>
+    <mat-form-field class="cc">
+     <label>Amount: </label> <input matInput [(ngModel)]="tx.amount" color="primary">
+    </mat-form-field>
+    <div class="cc">
+    <button mat-raised-button color="accent" (click)="sendTransaction()">Send</button>
+      </div>
+      <div>
+        <br>
+        <p class="cc">Transactions</p>
+      </div>
+  </mat-tab>
+</mat-tab-group>
+</mat-card>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <span (click)="logout()">Log Out</span>
+    </button>
+  </mat-menu>
+  </div>

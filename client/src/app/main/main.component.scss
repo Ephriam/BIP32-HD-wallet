@@ -1,0 +1,30 @@
+.d{
+    display: grid;
+    justify-items: start;
+    width: 100%;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.cc {
+    display: grid;
+    justify-items: center;
+}
+
+.sc {
+    display: grid;
+    justify-self: center;
+}
+
+.ds {
+    display: stretch;
+}
+
+.tb {
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+

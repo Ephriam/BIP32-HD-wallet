@@ -1,0 +1,53 @@
+<div>
+<mat-toolbar color="primary" class="pf">
+  <mat-toolbar-row class="container container-fluid">
+    <span>MyMaterial</span>
+    <span class="example-spacer"></span>
+    <button mat-button class="sign ml-1" (click)="openDialog()">Login</button>
+    <button class="sign" mat-button routerLink='' >Register</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+</div>
+<br>
+<div class="candy-carousel mt-10">
+    <p class="display-5">Wallet for multiple cryptos!</p>
+  <p class="lead"></p>
+  <hr class="my-4">
+  <p></p>
+  <p class="lead">
+    <button color="accent" mat-raised-button disableRipple=false>Learn more</button>
+  </p>
+</div>
+<br>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item >
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <span>Check voicemail</span>
+    </button>
+    <button mat-menu-item>
+      <span>Disable alerts</span>
+    </button>
+</mat-menu>
+<br>
+
+<mat-card>
+    <ol>
+        <li>
+          <mat-form-field>
+            <input matInput [(ngModel)]="name" placeholder="What's your name?">
+          </mat-form-field>
+        </li>
+        <li>
+          <button mat-raised-button (click)="openDialog()">Pick one</button>
+        </li>
+     </ol>
+  </mat-card>
+
+  <mat-sidenav-container class="example-container" *ngIf="shouldRun">
+      <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
+      <mat-sidenav-content>Main content</mat-sidenav-content>
+  </mat-sidenav-container>
+
+

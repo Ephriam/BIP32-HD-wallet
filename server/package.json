@@ -1,0 +1,17 @@
+{
+  "name": "wallet",
+  "version": "",
+  "main": "app.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bitcore-explorers": "^1.0.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.2.0",
+    "litecore-lib": "^0.13.22",
+    "lodash": "^4.17.5",
+    "mongoose": "^5.0.9",
+    "mongoose-auto-increment": "^5.0.1"
+  }
+}
